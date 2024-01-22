@@ -1,0 +1,17 @@
+
+`````````````````````````````````````````````
+Root route: /
+
+<nav> Dogs Whiskey Duke Perry </nav>
+
+~~~ Pics and names (with links) to each dog ~~~
+
+
+
+
+`````````````````````````````
+/whiskey
+
+<h1> WHISKEY </h1>
+<img>Picture of Whiskey</img>
+<p> Whiskey like to play fetch, etc </p>

@@ -1,0 +1,16 @@
+{
+   "dogs": [
+    {
+      "id": 1,
+      "name": "Whiskey",
+      "picture": "./public/whiskey.jpg",
+      "description": "Whiskey likes to play fetch and drink scotch."
+    },
+    {
+      "id": 2,
+      "name": "Duke",
+      "picture": "./public/duke.jpg",
+      "description": "Duke enjoys long walks on the beach."
+    }
+  ]
+}
