@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 /**  Shows all the names of the dogs with links to each dog
  *
  * Props:
- * - dogNames
+ * - dogs: Array of dog objects
  *
  * State:
  * - none
 */
-function Nav({ dogNames }) {
+
+function Nav({ dogs }) {
 
   // we need to loop through the dogNames and create a link for each dog
   // similar to the foods example:
@@ -19,11 +20,16 @@ function Nav({ dogNames }) {
   //     <Link to={`/food/${food}`}>Show me {food}!</Link>
   //   </li>
   // ))}
+  // </ul>
 
-</ul>
+
+  const dogNames = dogs.map(d => d.name);
+
   return (
-
-    <Link to={`/dogs`}>Show Me All the Dogs</Link>
+    <div>
+      <Link to={`/`}>Dogs</Link>
+      {dogNames.map(d => <Link to={d.name}>{d.name}</Link>)}
+    </div>
 
   );
 }
