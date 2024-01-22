@@ -22,16 +22,18 @@ function Nav({ dogs }) {
   // ))}
   // </ul>
 
+  async function getDogInfo(){
+    return await(dogs);
+  }
 
-  const dogNames = dogs.map(d => d.name);
 
-  return (
-    <div>
-      <Link to={`/`}>Dogs</Link>
-      {dogNames.map(d => <Link to={d.name}>{d.name}</Link>)}
-    </div>
+  // return (
+  //   // <div>
+  //   //   <Link to={`/`}>Dogs</Link>
+  //   //   {dogNames.map(d => <Link to={d.name}>{d.name}</Link>)}
+  //   // </div>
 
-  );
+  // );
 }
 
 export default Nav;
