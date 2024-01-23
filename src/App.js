@@ -3,6 +3,7 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import RoutesList from './RoutesList';
 import Nav from './Nav.js';
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 function App() {
 
@@ -14,11 +15,11 @@ function App() {
 
   async function getDogInfo() {
 
-    console.log("***** YOU MADE IT TO getDogInfo() FUNCTION")
+    console.log("***** YOU MADE IT TO getDogInfo() FUNCTION");
     const dogInfo = await fetch('http://localhost:5001/dogs');
-    console.log("***** dogInfo: ", dogInfo)
+    console.log("***** dogInfo: ", dogInfo);
     const dogInfoJson = await dogInfo.json();
-    console.log("*****dogInfoJson INSIDE ASYNC FUNCTION", dogInfoJson)
+    console.log("*****dogInfoJson INSIDE ASYNC FUNCTION", dogInfoJson);
     setDogInfo(() => dogInfoJson);
     setDogInfoHasLoaded(true);
 
@@ -34,11 +35,19 @@ function App() {
   // dogNames is what we are going to get back from the AJAX request
   return (
     <div className="App">
-      { dogInfoHasLoaded
-      ? <Nav dogs={dogInfo} />
-      : ''
-      }
+      <BrowserRouter>
+
+        {dogInfoHasLoaded
+          ? <Nav dogs={dogInfo} />
+          : ''
+        }
+        <RoutesList />
+      </BrowserRouter >
     </div>
+
+
+
+
   );
 }
 

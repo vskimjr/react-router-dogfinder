@@ -1,12 +1,16 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
+
 
 function RoutesList() {
-  // return (
-  //   < Routes >
-  //     <Route element={<DogList />} path="/" />
-  //     <Route element={<DogDetails />} path="/dogs/:name" />
-  //   </Routes>
-  // );
+
+  const {name} = useParams();
+
+  return (
+    < Routes >
+      <Route element={<DogList />} path="/" />
+      <Route element={<DogDetails dog={dog} />} path="/dogs/:name" />
+    </Routes>
+  );
 }
 
 export default RoutesList;

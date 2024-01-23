@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 /**  Shows all the names of the dogs with links to each dog
@@ -33,9 +34,17 @@ function Nav({ dogs }) {
 
   return (
     <div>
-      <Link to={`/`}>Dogs</Link>
-      {/* {dogNames.map(d => (<Link to={d.name}>{d.name}</Link>))} */}
-      {dogNames.map(d => (<Link> </Link>))}
+      <ul>
+        <li>
+          <Link to="/"> Dogs </Link>
+        </li>
+      </ul>
+      {
+        dogNames.map(d => (
+          <li key={d}>
+            <Link to={`/dogs/${d}`}>{d}</Link>
+          </li>))
+      }
     </div>
 
   );
