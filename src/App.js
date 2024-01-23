@@ -38,10 +38,10 @@ function App() {
       <BrowserRouter>
 
         {dogInfoHasLoaded
-          ? <Nav dogs={dogInfo} />
+          ? <div><Nav dogs={dogInfo} />
+            <RoutesList dogs={dogInfo} /></div>
           : ''
         }
-        <RoutesList />
       </BrowserRouter >
     </div>
 
