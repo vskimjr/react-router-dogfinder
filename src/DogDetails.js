@@ -1,17 +1,28 @@
+import { useParams } from "react-router-dom";
 
 /** Shows all of the info about a single dog */
-function DogDetails({ dog }){
+function DogDetails({dogs}) {
 
-// if dog name is whiskey, then we show all information about whiskey
-// to do this we actually need the dog info from the app parent component
+  // [{name: ... }, {name: ...}]
 
-return (
-  <div>
-    <h1>{dog.name}</h1>
-    <p>{dog.picture}</p>
-    <p>{dog.description}</p>
-  </div>
-);
+  const { name } = useParams();
+
+  console.log("DogDetails: ", dogs)
+
+  const targetDog = dogs.filter(d => d.name === name)[0];
+
+
+
+  // if dog name is whiskey, then we show all information about whiskey
+  // to do this we actually need the dog info from the app parent component
+
+  return (
+    <div>
+      <h1>{targetDog.name}</h1>
+      <p>{targetDog.picture}</p>
+      <p>{targetDog.description}</p>
+    </div>
+  );
 
 }
 

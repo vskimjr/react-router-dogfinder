@@ -11,6 +11,12 @@
       "name": "Duke",
       "picture": "./public/duke.jpg",
       "description": "Duke enjoys long walks on the beach."
+    },
+    {
+      "id": 3,
+      "name": "Jack",
+      "picture": "./public/jack.jpg",
+      "description": "Jack enjoys long walks on the beach."
     }
   ]
 }

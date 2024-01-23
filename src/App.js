@@ -3,7 +3,8 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import RoutesList from './RoutesList';
 import Nav from './Nav.js';
 import { useState } from 'react';
-import { Link } from "react-router-dom";
+
+import DogList from './DogList.js';
 
 function App() {
 
@@ -39,7 +40,9 @@ function App() {
 
         {dogInfoHasLoaded
           ? <div><Nav dogs={dogInfo} />
-            <RoutesList dogs={dogInfo} /></div>
+            <RoutesList dogs={dogInfo} />
+            {/* <DogList dogs={dogInfo} /> */}
+            </div>
           : ''
         }
       </BrowserRouter >
